@@ -4,11 +4,13 @@ import Order from './Order';
 
 
 const showOrders = (props) => {
+  let summa = 0
+  props.orders.forEach(el => summa += Number.parseFloat(el.price))
   return (<div>
     {props.orders.map(el => (
       <Order onDelete={props.onDelete} key={el.id} item={el} />
     ))}
-
+      <p className='summa'>Сумма: {summa}₽</p>
   </div>)
 }
 
@@ -24,7 +26,7 @@ export default function Header(props) {
   return (
     <header>
         <div>
-            <span className='logo'>Al Stuff</span>
+            <span className='logo'>Home Comfort</span>
             <ul className='nav'>
               <li>Про нас</li>
               <li>Контакты</li>
