@@ -12,24 +12,22 @@ body {
     font-weight: 300;
 }
 
-
-
 .wrapper {
-    width: 1280px;
+    width: 90%;
+    max-width: 1280px;
     margin: 50px auto;
-
 }
 
-header{
+header {
     position: relative;
 }
 
-header .logo{
+header .logo {
     font-weight: 600;
     font-size: 20px;
 }
 
-header ul.nav{
+header ul.nav {
     float: right;
     list-style: none;
 }
@@ -41,27 +39,28 @@ header ul.nav li {
     transition: opacity 500ms ease;
 }
 
-header ul.nav li:hover{
+header ul.nav li:hover {
     opacity: 0.5;
 }
 
-header .shop-cart-button{
+header .shop-cart-button {
     float: right;
     cursor: pointer;
     transition: color, transform, 500ms ease;
 }
 
 header .shop-cart-button:hover,
-header .shop-cart-button.active{
+header .shop-cart-button.active {
     color: #dc3d3d;
     transform: scale(1.5);
 }
 
-header .shop-cart{
+header .shop-cart {
     position: absolute;
     top: 30px;
     right: 0;
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     background: #fafafa;
     -webkit-box-shadow: 4px 5px 15px -7px #606060;
     box-shadow: 4px 5px 15px -7px #606060;
@@ -69,7 +68,7 @@ header .shop-cart{
     padding: 20px;
 }
 
-header .shop-cart .empty h2{
+header .shop-cart .empty h2 {
     font-size: 20px;
     margin-bottom: 20px;
 }
@@ -87,7 +86,7 @@ header .shop-cart .item img {
     margin-right: 20px;
 }
 
-header .shop-cart .item h2{
+header .shop-cart .item h2 {
     font-size: 20px;
     margin-bottom: 10px;
 }
@@ -97,7 +96,7 @@ header .shop-cart .item p {
     font-weight: 600;
 }
 
-header .shop-cart .item .delete-icon { 
+header .shop-cart .item .delete-icon {
     color: #dc3d3d;
     float: right;
     position: relative;
@@ -106,20 +105,20 @@ header .shop-cart .item .delete-icon {
     transition: color, transform 500ms ease;
 }
 
-header .shop-cart .item .delete-icon:hover { 
-    color:#dc3d3d;
+header .shop-cart .item .delete-icon:hover {
+    color: #dc3d3d;
     transform: scale(1.5);
 }
 
-header .shop-cart .summa{
+header .shop-cart .summa {
     float: left;
     width: 100%;
     font-weight: 700;
-    font-size: 20;
-    margin-bottom: -5px;    
+    font-size: 20px;
+    margin-bottom: -5px;
 }
 
-header .presentation{
+header .presentation {
     margin: 50px 0;
     background: url('./img/bg.jpeg') no-repeat;
     width: 100%;
@@ -127,9 +126,9 @@ header .presentation{
     background-position: center center;
     background-blend-mode: multiply;
     position: relative;
-    
 }
-header .presentation::after{
+
+header .presentation::after {
     content: 'Лучшие товары для вашего дома';
     position: absolute;
     top: 50px;
@@ -139,7 +138,8 @@ header .presentation::after{
     font-weight: 600;
     color: white;
 }
-header .presentation::before{
+
+header .presentation::before {
     content: 'по низким ценам!';
     position: absolute;
     top: 200px;
@@ -150,7 +150,7 @@ header .presentation::before{
     color: white;
 }
 
-.categories div { 
+.categories div {
     display: inline-block;
     background-color: #f2f2f2;
     border-radius: 50px;
@@ -162,8 +162,8 @@ header .presentation::before{
     transition: all 500ms ease;
 }
 
-.categories div:hover { 
-    border-color:silver;
+.categories div:hover {
+    border-color: silver;
     transform: scale(1.1);
 }
 
@@ -174,7 +174,7 @@ main {
     justify-content: space-between;
 }
 
-main .item{
+main .item {
     width: 30%;
     margin-bottom: 50px;
     background: #f5f5f5;
@@ -183,24 +183,24 @@ main .item{
     padding-bottom: 20px;
 }
 
-main .item img{
+main .item img {
     width: 100%;
     border-radius: 10px 10px 0 0;
     transition: transform 500ms ease;
 }
 
-main .item img:hover{
+main .item img:hover {
     transform: scale(1.05);
 }
 
-main h2, 
+main h2,
 main p,
 main b {
     margin: 10px 20px;
-    color: 333;
+    color: #333;
 }
 
-main .add-to-cart{
+main .add-to-cart {
     position: absolute;
     right: 20px;
     bottom: 20px;
@@ -215,11 +215,94 @@ main .add-to-cart{
     font-weight: 600;
     transition: transform 500ms ease;
 }
-main .add-to-cart:hover{
+
+main .add-to-cart:hover {
     transform: scale(1.5) translateY(-5px);
 }
 
-footer{
+footer {
     text-align: center;
     margin-top: 100px;
+}
+
+/* Медиа-запросы для адаптивности */
+
+@media (max-width: 1024px) {
+    .wrapper {
+        width: 95%;
+    }
+
+    main .item {
+        width: 45%;
+    }
+
+    header .presentation::after {
+        font-size: 30px;
+        top: 30px;
+        right: 30px;
+    }
+
+    header .presentation::before {
+        font-size: 12px;
+        top: 150px;
+        right: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    header ul.nav {
+        display: none;
+    }
+
+    header .shop-cart-button {
+        margin-right: 20px;
+    }
+
+    main .item {
+        width: 100%;
+    }
+
+    header .presentation {
+        height: 300px;
+    }
+
+    header .presentation::after {
+        font-size: 24px;
+        top: 20px;
+        right: 20px;
+    }
+
+    header .presentation::before {
+        font-size: 10px;
+        top: 100px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 18px;
+    }
+
+    header .shop-cart {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    header .presentation::after {
+        font-size: 20px;
+        top: 10px;
+        right: 10px;
+    }
+
+    header .presentation::before {
+        font-size: 8px;
+        top: 80px;
+        right: 10px;
+    }
+
+    .categories div {
+        padding: 8px 16px;
+        margin-right: 10px;
+    }
 }
